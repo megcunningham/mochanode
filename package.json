@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/megcunningham/mochanode#readme",
   "devDependencies": {
+    "chai": "^3.2.0",
     "mocha": "^2.2.5"
   }
 }
