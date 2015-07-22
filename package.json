@@ -1,0 +1,22 @@
+{
+  "name": "mochanode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megcunningham/mochanode.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/megcunningham/mochanode/issues"
+  },
+  "homepage": "https://github.com/megcunningham/mochanode#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
