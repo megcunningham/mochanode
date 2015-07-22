@@ -11,120 +11,119 @@ describe('Mocha + Chai', function () {
     });
   });
 
-describe.only('CLI',function () {
+describe('CLI',function () {
 	it('should thank me for downloading', function (done) {
-		console.log('childprocess');
 		cp.execFile('./app.js', function (err, stdout) {
-			console.log('err', err);
-			console.log('stdout', stdout);
-			stdout.should.equal('Thanks for downloading my app!!!');
+			stdout.should.equal('Thanks for downloading my app\n');
+			done();
 		});
-	})
+	});
 });
 
-// describe('Animal', function() {
-// 	describe('constructor', function () {
-// 		it('should return an Animal object', function () {
-// 			var animal = new Animal();
+describe('Animal', function() {
+	describe('constructor', function () {
+		it('should return an Animal object', function () {
+			var animal = new Animal();
 
-// 			animal.should.be.an('object');
-// 			animal.should.be.an.instanceOf(Animal);
-// 		})
+			animal.should.be.an('object');
+			animal.should.be.an.instanceOf(Animal);
+		})
 
-// 		it('should be alive', function () {
-// 			var animal = new Animal;
+		it('should be alive', function () {
+			var animal = new Animal;
 
-// 			animal.isAlive.should.be.true;
-// 		});
-// 		it('should have 100% health', function(){
-// 				animal.health.should.be.equal(1);
+			animal.isAlive.should.be.true;
+		});
+		it('should have 100% health', function(){
+			var animal = new Animal;
+				animal.health.should.be.equal(1);
 		
-// 	});
-// 		it('should accept a type', function () {
-// 			var cat = new Animal('cat');
-// 			var dog = new Animal('dog');
-// 			cat.type.should.equal('cat');
-// 			dog.type.should.equal('dog');
-// 		});
-// 	});
+	});
+		it('should accept a type', function () {
+			var cat = new Animal('cat');
+			var dog = new Animal('dog');
+			cat.type.should.equal('cat');
+			dog.type.should.equal('dog');
+		});
+	});
 
-// 	describe('updateHealthStats()', function (){
-// 		it('should change the health', function() {
-// 			var animal = new Animal();
-// 			var health = animal.health;
+	describe('updateHealthStats()', function (){
+		it('should change the health', function() {
+			var animal = new Animal();
+			var health = animal.health;
 
-// 			animal.updateHealthStats(function() {
-// 				animal.health.should.not.equal(health);
-// 				done();
-// 			});
-// 		})
-// 	})
-
-
-// 	describe('#beCute()', function () {
-// 		it('should be a prototype method', function() {
-// 			var animal = new Animal();
-// 			animal.should.respondTo('beCute');
-// 			animal.should.not.have.ownProperty('beCute');
-// 		});
-
-// 		it('should make the animal cute', function () {
-// 			var animal = new Animal();
-// 			should.not.exist(animal.isCute);
-// 			animal.beCute();
-// 			animal.isCute.should.be.true;
-// 		});
-// 	});
-// });
-
-// 	describe('Array', function () {
-// 		describe('#filter()', function () {
-// 			it('should return an array of items that return truthy in the inner fn', function () {
-// 				var array = [1,2,3,4,5];
-
-// 				var output = array.filter(function (item) {
-// 					return item % 2;
-// 				});
-
-// 				output.should.eql([1,3,5]);
-// 			});
-// 		});
-// 	});
+			animal.updateHealthStats(function() {
+				animal.health.should.not.equal(health);
+				done();
+			});
+		})
+	})
 
 
-// describe('Array', function () {
-// 	describe('#map()', function () {
-// 		it('should return an array with the return value of the inner fn', function() {
-// 			var array = [1,2,3,4,5];
+	describe('#beCute()', function () {
+		it('should be a prototype method', function() {
+			var animal = new Animal();
+			animal.should.respondTo('beCute');
+			animal.should.not.have.ownProperty('beCute');
+		});
 
-// 			var output = array.map(function (item) {
-// 				return item * item;
-// 			});
+		it('should make the animal cute', function () {
+			var animal = new Animal();
+			should.not.exist(animal.isCute);
+			animal.beCute();
+			animal.isCute.should.be.true;
+		});
+	});
+});
 
-// 			output.should.eql([1,4,9,16,25]);
-// 		});
+	describe('Array', function () {
+		describe('#filter()', function () {
+			it('should return an array of items that return truthy in the inner fn', function () {
+				var array = [1,2,3,4,5];
+
+				var output = array.filter(function (item) {
+					return item % 2;
+				});
+
+				output.should.eql([1,3,5]);
+			});
+		});
+	});
 
 
-// 		it('should keep the same length', function () {
-// 			var array = [1,2,3,4,5];
+describe('Array', function () {
+	describe('#map()', function () {
+		it('should return an array with the return value of the inner fn', function() {
+			var array = [1,2,3,4,5];
 
-// 			var length = array.map(function () {
-// 				return false;
-// 			}) .length;
+			var output = array.map(function (item) {
+				return item * item;
+			});
 
-// 			length.should.eql(array.length);
-// 		});
+			output.should.eql([1,4,9,16,25]);
+		});
 
-// 		it('should not mutate the original array', function () {
-// 			var array = [1,2,3,4,5];
 
-// 			array.map(function () {
-// 				return false;
-// 			});
+		it('should keep the same length', function () {
+			var array = [1,2,3,4,5];
 
-// 			array.should.eql([1,2,3,4,5]);
-// 		});
-// 	});
-// });
+			var length = array.map(function () {
+				return false;
+			}) .length;
+
+			length.should.eql(array.length);
+		});
+
+		it('should not mutate the original array', function () {
+			var array = [1,2,3,4,5];
+
+			array.map(function () {
+				return false;
+			});
+
+			array.should.eql([1,2,3,4,5]);
+		});
+	});
+});
 
 
