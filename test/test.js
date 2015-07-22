@@ -1,6 +1,6 @@
 var path = require('path');
 var should = require("chai").should();
-var Animal = require(process.cwd() + '/lib/Animal');
+var Animal = require(process.cwd() + '/lib/animal');
 var cp = require('child_process');
 
 
