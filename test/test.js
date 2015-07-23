@@ -4,12 +4,21 @@ var Animal = require(process.cwd() + '/lib/animal');
 var cp = require('child_process');
 
 
+
 describe('Mocha + Chai', function () {
     it('truthyness', function () {
     	true.should.be.true;
     	false.should.be.false;
     });
   });
+
+describe('Thanks', function () {
+	var thanks = require(path.join(process.cwd(),'thanks'));
+
+	it('should thank me for downloading', function () {
+		thanks.should.equal('Thanks for downloading my app!');
+	}
+})
 
 describe('CLI',function () {
 	it('should thank me for downloading', function (done) {
